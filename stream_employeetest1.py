@@ -1,11 +1,11 @@
 
 
-#from pycaret.classification import load_model, predict_model
+
 import joblib
 import streamlit as st
 import pandas as pd
 import numpy as np
-#model = load_model('Final_model')
+
 model= joblib.load("Final_model.pkl")
 
 
@@ -13,10 +13,10 @@ model= joblib.load("Final_model.pkl")
 
 
 def predict(model, input_df):
-    #predictions_df = predict_model(estimator=model, data=input_df)
+    
     predictions_df = model.predict(input_df)
     
-    #predictions = predictions_df['Label'][0]
+    
     predictions = predictions_df[0]
     return predictions
 
